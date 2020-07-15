@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
   <link href="./static/assets/error.ico" rel="icon">
 
-  <title>Title page</title>
+  <title>Dayvyno Works</title>
 
   <link href="./static/main.3f6952e4.css" rel="stylesheet">
 </head>
@@ -43,17 +43,17 @@
             <li><a href="./works.html" title="">02 : Works</a></li>
             <li><a href="./about.html" title="">03 : About me</a></li>
             <li><a href="./contact.html" title="">04 : Contact</a></li>
-            <li><a href="./components.html" title="">05 : Components</a></li>
+
           </ul>
 
 
           <ul class="nav navbar-nav navbar-right navbar-small visible-md visible-lg">
-            <li><a href="./index.html" title="" class="active">001</a></li>
-            <li><a href="./index.html" title="">002</a></li>
-            <li><a href="./index.html" title="">003</a></li>
-            <li><a href="./index.html" title="">004</a></li>
-            <li><a href="./index.html" title="">005</a></li>
-            <li><a href="./index.html" title="">006</a></li>
+            <li><a href="./work.html" title="" class="active">001</a></li>
+            <li><a href="./work2.html" title="">002</a></li>
+            <li><a href="./work3.html" title="">003</a></li>
+            <li><a href="./work2.html" title="">004</a></li>
+            <li><a href="./work2.html" title="">005</a></li>
+            <li><a href="./work.html" title="">006</a></li>
           </ul>
 
 
@@ -68,15 +68,41 @@
           <img src="./static/assets/images/work001-01.jpg" class="img-responsive" alt="">
           <div class="card-container">
             <div class="text-center">
-              <h1 class="h2">001 : Fringilla sit amet</h1>
+              <h1 class="h2">001 : JPG to PNG Image Converter</h1>
             </div>
-            <p>Nulla facilisi. Vivamus vestibulum, elit in scelerisque ultricies, nisl nunc pulvinar ligula, id sodales
-              arcu sapien in nisi. Quisque libero enim, mattis non augue posuere, venenatis dapibus urna.</p>
+            <p><b>This project converts JPG image files to PNG image files which gives better social media
+                usage efficiency. It is capable of converting as much files as possible on a go. All you need to do is
+                create a folder and save all the jpg image files inside of the folder. Let the jpg image folder be
+                in the same folder where you have your python script. Go to your command prompt and enter into the
+                parent folder; type "(python3)space(jpgimage folder)space(output folder)"</p>
+            <p>Where: </p>
+            <ul>
+              <li>python: Type "python3" if you also have python2 in your system otherwise typing "python" only will
+                work </li>
+              <li>space: As in space-bar on your keyboard</li>
+              <li>jpgimage folder: The name of the folder where you have your jpg files</li>
+              <li>output folder: The destination of your png files. you can give it any name</li>
+            </ul>
+            </b>
+            <p><b>This is the script below:</b></p>
+            <p>
+              import sys<br />
+              import os<br />
+              from PIL import Image<br /><br />
 
-            <blockquote>
-              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
-              <small class="pull-right">Irina Martin</small>
-            </blockquote>
+              image_folder = sys.argv[1]<br />
+              output_folder = sys.argv[2]<br /><br />
+
+              if not os.path.exists(output_folder):<br />
+            <p style="text-indent: 5%;">os.makedirs(output_folder) </p>
+
+            for filename in os.listdir(image_folder):<br />
+            <p style="text-indent: 5%;">img = Image.open(f"{image_folder}{filename} ")<br />
+            <p style="text-indent: 5%;"> clean_name = os.path.splitext(filename)[0]<br />
+            <p style="text-indent: 5%;"> img.save(f'{output_folder}{clean_name}.png', 'png')<br />
+            <p style="text-indent: 5%;"> print('all done')</p>
+            </p>
+            </p>
           </div>
         </div>
 

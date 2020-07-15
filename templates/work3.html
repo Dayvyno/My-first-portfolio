@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
     <link href="./static/assets/error.ico" rel="icon">
 
-    <title>About Dayvyno</title>
+    <title>Dayvyno Works</title>
 
     <link href="./static/main.3f6952e4.css" rel="stylesheet">
 </head>
@@ -43,6 +43,17 @@
                         <li><a href="./works.html" title="">02 : Works</a></li>
                         <li><a href="./about.html" title="">03 : About me</a></li>
                         <li><a href="./contact.html" title="">04 : Contact</a></li>
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right navbar-small visible-md visible-lg">
+                        <li><a href="./work.html" title="" class="active">001</a></li>
+                        <li><a href="./work2.html" title="">002</a></li>
+                        <li><a href="./work3.html" title="">003</a></li>
+                        <li><a href="./work2.html" title="">004</a></li>
+                        <li><a href="./work2.html" title="">005</a></li>
+                        <li><a href="./work.html" title="">006</a></li>
                     </ul>
 
 
@@ -50,64 +61,45 @@
             </div>
         </nav>
     </header>
-
     <div class="section-container">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="section-container-spacer text-center">
-                        <h1 class="h2">03 : About me</h1>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <h3>My Life Before Programming</h3>
-                                    <p>
-                                        I was admitted to study Mechanical Engineering in one of the best Federal
-                                        Universties in Nigeria, University of Benin in 2006. I got this admission by
-                                        passing two highly competitive exams(UME and Post-UME) while actively
-                                        engaged in a full time job. Hardwork.
-                                    </p>
-                                    <p>
-                                        I graduted in 2012 with a Second Class Upper Honors. Started my youth service
-                                        corps(NYSC) in March, 2013 and passed out in Feb. 2014. That is when the job
-                                        hunting started. It wasn't easy but I thank God. I landed my first graduate job
-                                        in March, 2015 as an Engineer in Sanden Intercool Nigeria, Limited; one
-                                        of the leading Merchandise cooler producers in Nigeria.
-                                    </p>
-                                    <p>
-                                        Haven worked here for 5years and finding it difficult to find another job that
-                                        can
-                                        pose more challenges, I discovered Programming.
-                                    </p>
-                                    <h3>My Life As A Programmer </h3>
-                                    <p>
-                                        I started learning programming exactly on the 8th of March, 2020 before the
-                                        Covid-19 lockdown started. I started with Python and learnt HTML and CSS in
-                                        between.
-                                    </p>
-                                    <h3>My Pursuit</h3>
-                                    <p> My dream is to become one of the most recognized Machine Learning,
-                                        Data Science and AI expert in the next 5yrs.
-                                    </p>
-                                    <p>
-                                        My dream is also to delve into web development in the next 10years and
-                                        be recognized in it. i just wanna be highly relevant in the industry
-                                    </p>
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-                                    <img src="./static/assets/images/dayve.jpg" class="img-responsive" alt="">
-                                </div>
-                            </div>
+                    <img src="./static/assets/images/work001-01.jpg" class="img-responsive" alt="">
+                    <div class="card-container">
+                        <div class="text-center">
+                            <h1 class="h2">001 : Scraping Nairaland</h1>
                         </div>
+                        <p><b>This is one of my projects on webscraping. Although, I have more webscraping projects
+                                which involve more syntax than this but I chose to update this because it is unique even
+                                with its short
+                                code.
+                        </p>
+
+                        </b>
+                        <p><b>This is the script below:</b></p>
+                        <p>import requests<br />
+                            from bs4 import BeautifulSoup<br /><br />
+
+                            respond = requests.get('https://www.nairaland.com/')<br />
+                            soup = BeautifulSoup(respond.text, 'html.parser')<br /><br />
+
+
+                            next1 = soup.select_one('body')<br />
+                            next2 = next1.select('.boards')[1]<br />
+
+                            next3 = next2.find_all('a')<br />
+                            n = 0</p>
+                        for item in next3[4:66]:
+                        <p style="text-indent: 5%;">n += 1</p>
+                        <p style="text-indent: 5%;">print(n, item.getText())</p>
                     </div>
-
-
                 </div>
+
             </div>
+
         </div>
+    </div>
     </div>
 
 
